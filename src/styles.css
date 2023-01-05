@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+body {
+  text-shadow: 0 0 2px rgba(0, 0, 0, 1);
+  background-image: radial-gradient(at 25% top, #32112c 0%, #0a1526 40%);
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #fff;
+}
+.bg-container{
+    background: url("./assets/bg.svg");
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    background-position: center;
+    background-size: cover;
+}
+
+

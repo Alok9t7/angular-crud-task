@@ -1,0 +1,39 @@
+<h1 class="text-center mt-4 mb-4">Angular CRUD App</h1>
+<div class="container rounded bg-container">
+  <div class="row mt-3 d-flex justify-content-center">
+    <div class="col-md-6 mb-5 mt-5">
+      <h3 class="text-light">Add / Update New Post</h3>
+      <form class="add-post-form">
+        <div class="form-group">
+          <label for="title" class="text-light">Title</label>
+          <input type="text" [(ngModel)]="postTitle" [ngModelOptions]="{standalone: true}" class="form-control"
+            id="title-value">
+        </div>
+        <div class="form-group">
+          <label for="body" class="text-light">Content</label>
+          <textarea [(ngModel)]="postBody" [ngModelOptions]="{standalone: true}" class="form-control"
+            id="body-value"></textarea>
+        </div>
+        <button type="submit" class="btn mt-4 btn-primary" (click)="save()"><fa-icon [icon]="addIcon"></fa-icon>
+          Add / Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5 rounded bg-container">
+  <div class="post-list row justify-content-center ">
+    <div class="card m-0 col-md-5 bg-transparent border border-secondary m-3 " *ngFor="let postItems of postsArray">
+      <div class="card-body">
+        <h4 class="card-title">{{postItems.title | titlecase}}</h4>
+        <h6 class="card-subtitle mb-2 ">{{postItems.date | date:'medium'}}</h6>
+        <p class="card-text">{{postItems.body | titlecase}}</p>
+        <button type="button" class="btn btn-success m-1" (click)="updatePost(postItems)"> <fa-icon
+            [icon]="editIcon"></fa-icon>
+          Edit</button>
+        <button type="button" class="btn btn-danger" (click)="deletePost(postItems)"><fa-icon
+            [icon]="deleteIcon"></fa-icon> Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
